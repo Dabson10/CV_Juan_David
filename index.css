@@ -1,0 +1,463 @@
+body{
+    padding:0;
+    margin:0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #f5f5f5;
+    color:#333333
+}
+/* Color de los titulos y subtitulos */
+h2, h3, .subTit{
+    color:#7776B3;
+}
+
+/* Contenedor general de ambas tarjetas */
+.contGeneral{
+    display:flex;
+    justify-content: center;
+    gap:20px;
+    margin:40px 0;
+    
+}
+/* Diseño para la tarjeta en la posicion izquierda con datos personales */
+.contCent, .targetExp{
+    padding:10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    border-radius: .5em;
+}
+.cabPrincip{
+    display:flex;
+    width: 30%;
+    height: 100%;
+    /* background-color: ; */
+}
+.contCent{
+    position:fixed;
+    height: 20em;
+    width: 27%;
+}
+/* Primer contenedor de la tarjeta izquierda */
+.contNom h2{
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+.subTit{
+    font-size: 20px;
+    font-weight: 500;
+}
+.contNom p {
+    width: 80%;
+}
+
+
+.iconGit{
+    width: 30px;
+    margin: 0 20px
+}
+
+/* Diseño para la tarjeta de la derecha */
+
+.targetExp{
+    width: 45%;
+}
+
+
+.contInfo1 h2{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.perfil{
+    width: 90%;
+    font-size: 17px;
+}
+.expTitH{
+    color:#FE7743;
+}
+.expTitC{
+    color:#8174A0;
+}
+.expTitJ{
+    color:#FF0B55;
+}
+
+/* Diseño de pos botones y sus respectivas secciones */
+
+.contBtnExp{
+    display:flex;
+    justify-content: space-evenly;
+}
+.btnDiseño{
+    width: 20%;
+    height: 2em;
+    border-radius: .5em;
+    background-color: transparent;
+    color:#7776B3;
+    border:1px solid #7776b3
+}
+
+.btnDiseño:hover{
+    background-color: #7776b3;
+    border: 1px solid ;
+    color:white
+}
+/* Los siguientes contenedores estaran ocultos por el hecho de que 
+se activaran con JS y .active */
+
+.java{
+    display:none;
+}
+.java.active{
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+.cGato{
+    display:none;
+}
+.cGato.active{
+    display:block;
+    transition: all 0.3s ease-in-out;
+}
+.html{
+    display:none;
+}
+.html.active{
+    display:block;
+    transition: all 0.3s ease-in-out;
+}
+
+.contProye a{
+    color:black;
+    text-decoration: none;
+}
+.contProye a:hover{
+    text-decoration: underline;
+    color:gray
+}
+/* Este no es un boton es solo un contenedor que al pasar por ahi el mouse
+la lista de habilidades cambiara de color respecto a la habilidad empleada.*/
+.contBtnMobil{
+    display:flex;
+    justify-content: space-evenly;
+}
+.contBtnMobil button{
+    width: 20%;
+    /* text-align: center; */
+    height: 2.5em;
+    border-radius: .5em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.basico{
+    background-color: #3D8D7A;
+    color:white;
+    border: 1px solid #fff;
+}
+.basico:hover{
+    border: 1px solid #A8CD9F;
+    background-color:#B3D8A8;
+}
+.inter{
+    background-color: #DDA853;
+    color:white;
+    border:1px solid #fff;
+}
+.opcInt,.opcBasi{
+    margin:10px 0;
+    border-radius: .5em;
+    padding:5px;
+    /* width: 100%; */
+}
+.opcInt.active{
+    background-color: #FBDB93;
+}
+
+.opcBasi.active{
+    background-color: #B3D8A8;
+}
+.inter:hover{
+    background-color: #FBDB93;
+}
+.eva{
+    background-color:#27548A;
+    border: 1px solid white;
+}
+.eva:hover{
+    background-color: #4F709C;
+}
+
+
+
+/* Estilo de las listas */
+ul {
+    list-style-type:circle ;
+    /* width: 50%; */
+
+}
+
+ul li{
+    margin:10px 0;
+    border-radius: .5em;
+    padding:5px;
+    width: 50%;
+}
+.contRed{
+    gap:30px
+}
+.videos{
+    width: 480px;
+    height: 250px;
+}
+/* Media Queries de diferentes tamaños */
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .contGeneral{
+        gap:40px
+    }
+    .perfil{
+        font-size: 17px;
+    }
+    .videos{
+        width: 350px;
+    }
+}
+/* Otra media Querie */
+@media screen and (min-width: 425px) and (max-width: 768px){
+    .contGeneral{
+        display:flex;
+        flex-direction: column;
+        gap:10px
+    }
+    .contCent{
+        position:static;
+        height: auto;
+        width: 100%;
+    }
+    .perfil{
+        font-size: 14px;
+    }
+    .cabPrincip{
+        width: 100%;
+    }
+    .contGeneral{
+        width: 100%;
+        margin-top: 0;
+    }
+    .contCent, .targetExp{
+        box-shadow:  0 2px 8px rgba(0, 0, 0, 0.5);
+        border-radius: 0;
+    }
+    .contNom {
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contNom p{
+        text-align: center;
+        margin: 5px 0
+    }
+    .contNom span{
+        text-align: center;
+    }
+    .contNom h2{
+        margin-top:0;
+    }
+    .contRed{
+        display:flex;
+        justify-content: center;
+    }
+    /* Diseño de la tarjeta de abajo */
+    .targetExp{
+        width: auto;
+    }
+    .videos{
+        width: 400px;
+    }
+}
+/* Otro tamaño de querie */
+@media screen and (min-width: 375px) and (max-width: 425px) {
+    .contGeneral{
+        display:flex;
+        flex-direction: column;
+        gap:10px
+    }
+    .contCent{
+        position:static;
+        height: auto;
+        width: 100%;
+    }
+    .perfil{
+        font-size: 14px;
+    }
+    .cabPrincip{
+        width: 100%;
+    }
+    .contGeneral{
+        width: 100%;
+        margin-top: 0;
+    }
+    .contCent, .targetExp{
+        box-shadow:  0 2px 8px rgba(0, 0, 0, 0.5);
+        border-radius: 0;
+    }
+    .contNom {
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contNom p{
+        text-align: center;
+        font-size: 14px;
+        margin: 5px 0
+    }
+    .contNom h2{
+        margin-top:0;
+        font-size: 20px;
+    }
+    .contNom span{
+        text-align: center;
+        margin-top:0;
+        font-size: 17px;
+    }
+    .contRed{
+        display:flex;
+        justify-content: center;
+    }
+    /* Diseño de la tarjeta de abajo */
+    .targetExp{
+        width: auto;
+    }
+    .videos{
+        width: 350px;
+    }
+}
+
+/* Otro tamaño de querie */
+@media screen and (min-width: 320px) and (max-width: 375px) {
+    .contGeneral{
+        display:flex;
+        flex-direction: column;
+        gap:10px
+    }
+    .contCent{
+        position:static;
+        height: auto;
+        width: 100%;
+    }
+    .perfil{
+        font-size: 14px;
+    }
+    .cabPrincip{
+        width: 100%;
+    }
+    .contGeneral{
+        width: 100%;
+        margin-top: 0;
+    }
+    .contCent, .targetExp{
+        box-shadow:  0 2px 8px rgba(0, 0, 0, 0.5);
+        border-radius: 0;
+    }
+    .contNom {
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contNom p{
+        text-align: center;
+        font-size: 14px;
+        margin: 5px 0
+    }
+    .contNom h2{
+        margin-top:0;
+        font-size: 20px;
+    }
+    .contNom span{
+        text-align: center;
+        margin-top:0;
+        font-size: 17px;
+    }
+    .contRed{
+        display:flex;
+        justify-content: center;
+    }
+    /* Diseño de la tarjeta de abajo */
+    .targetExp{
+        width: auto;
+    }
+    .videos{
+        width: 300px;
+    }
+}
+/* Ultimo  media querie */
+@media screen and (max-width: 320px){
+    .contGeneral{
+        display:flex;
+        flex-direction: column;
+        gap:10px
+    }
+    .contCent{
+        position:static;
+        height: auto;
+        width: 100%;
+    }
+    .perfil{
+        font-size: 14px;
+    }
+    .cabPrincip{
+        width: 100%;
+    }
+    .contGeneral{
+        width: 100%;
+        margin-top: 0;
+    }
+    .contCent, .targetExp{
+        box-shadow:  0 2px 8px rgba(0, 0, 0, 0.5);
+        border-radius: 0;
+    }
+    .contNom {
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contNom p{
+        text-align: center;
+        font-size: 14px;
+        margin: 5px 0
+    }
+    .contNom h2{
+        margin-top:0;
+        font-size: 20px;
+    }
+    .contNom span{
+        text-align: center;
+        margin-top:0;
+        font-size: 17px;
+    }
+    .contRed{
+        display:flex;
+        justify-content: center;
+    }
+    /* Diseño de la tarjeta de abajo */
+    .targetExp{
+        width: auto;
+    }
+    .videos{
+        width: 250px;
+    }
+}
+
+
+
+
+
+
+
+
