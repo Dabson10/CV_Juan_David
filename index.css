@@ -7,6 +7,7 @@
 body{
     padding:0;
     margin:0;
+    max-height: 100vh;
 }
 header{
     width: 100%;
@@ -38,6 +39,7 @@ header{
 }
 .cabCuerpo{
     display:flex;
+    /* background-color: red; */
     flex-direction: row-reverse;
     width: 100%;
     margin: 0;
@@ -64,6 +66,9 @@ header{
     margin-top: 15px;
     /* background-color: blue; */
 }
+.nombteTit{
+    text-align: center;
+}
 .contRedes{
     width: 90%;
     margin-top:auto;
@@ -82,8 +87,10 @@ header{
 .textPort{
     width: 100%;
     display:flex;
+    /* overflow-y: scroll; */
     flex-direction: column;
-    margin:0 auto;
+    margin: auto;
+    /* margin-bottom:100px; */
     justify-content: center;
     align-items: center;
     line-height: 1.5;
@@ -108,6 +115,169 @@ header{
 .svgAbajo{
     width: 25px;
     fill: #98A1BC;
+}
+
+/* Media queries */
+/* Laptops */
+@media screen and (min-width:1025px) and (max-width: 1440px) {
+    .titulo{
+        display:flex;
+        width: 50%;
+        align-items: center;
+    }
+    .textoPortada{
+        font-size: 15px;
+    }
+    .textPort{
+        padding-top:130px;
+        overflow-y: scroll;
+        height: 50%;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .cuerpoHeader{
+        width: 80%;
+    }
+    .titulo{
+        display:flex;
+        width: 60%;
+        align-items: center;
+    }
+    .textPort{
+        padding-top:220px;
+        overflow-y: scroll;
+        height: 50%;
+    }
+    .footerHeader{
+        padding: 0px;
+    }
+}
+
+/* Moviles grandes */
+@media screen and (min-width: 624px) and (max-width: 768px) {
+    .cuerpoHeader{
+        width: 85%;
+        top:7%;
+        left:6%;
+    }
+    .titulo{
+        display:flex;
+        width: 60%;
+        align-items: center;
+    }
+    .textPort{
+        padding-top:245px;
+        overflow-y: scroll;
+        height: 50%;
+    }
+    .footerHeader{
+        padding: 0px;
+    }
+}
+/* Moviles grandes 2*/
+@media screen and (min-width: 426px) and (max-width: 623px) {
+    .cuerpoHeader{
+        width: 85%;
+        top:7%;
+        left:6%;
+    }
+    .titulo{
+        display:flex;
+        width: 75%;
+        align-items: center;
+    }
+    .contImgP{
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+    .imgPerfil{
+        width: 100px;
+        height: 100px;
+    }
+    .textPort{
+        padding-top:345px;
+        overflow-y: scroll;
+        height: 50%;
+    }
+    .footerHeader{
+        padding: 0px;
+    }
+}
+
+/* Telefonos mas pequeños 1 */
+@media screen and (min-width: 376px) and (max-width: 425px) {
+    .cuerpoHeader{
+        width: 85%;
+        top:7%;
+        left:5%;
+    }
+    .titulo{
+        display:flex;
+        width: 75%;
+        align-items: center;
+    }
+    .contImgP{
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+    .imgPerfil{
+        width: 90px;
+        height: 90px;
+    }
+    .textPort{
+        padding-top:345px;
+        overflow-y: scroll;
+        height: 50%;
+    }
+    .footerHeader{
+        padding: 0px;
+    }
+}
+
+/* Telefonos mas pequeños 2 */
+@media screen and (min-width: 320px) and (max-width: 375px) {
+    .cuerpoHeader{
+        width: 95%;
+        position:relative;
+        top:auto;
+        left:auto;
+        padding:85px 0 90px 0;
+    }
+    .titulo{
+        display:flex;
+        width: 70%;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .contImgP{
+    width: 25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+    .imgPerfil{
+        width: 70px;
+        height: 70px;
+    }
+    .textPort{
+        padding-top:425px;
+        /* padding-bottom: 15px; */
+        margin-bottom: 10px;
+        overflow-y: scroll;
+        width: 95%;
+        height:15%;
+    }
+    .footerHeader{
+        padding: 0px;
+        background-color: #6C698D;
+        z-index: 2;
+    }
 }
 
 
