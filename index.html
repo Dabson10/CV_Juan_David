@@ -23,8 +23,10 @@
 </head>
 
 <body>
-    <header id="header">
-        <div class="cuerpoHeader">
+    <!-- Tambien debes de quitar el reducir de la clase cuando termines la seccion de los proyectos. -->
+    <header id="header" class="reducir">
+        <!-- Cuando termines la seccion de protectos, debes de quitar el ocultar de la clase -->
+        <div class="cuerpoHeader ocultar">
             <!-- Cabecera que cuenta con informacion y una imagen sea el caso que 
             decida agregar la imagen.-->
             <div class="cabCuerpo">
@@ -87,7 +89,7 @@
                     y poder aplicarlo ya sea en una web o en algún tipo de interfaz.
                 </p>
                 <p class="textoPortada">
-                    En mis tiempos libres me gusta explorar el mundo de hyrule y de vez en cuando tener 
+                    En mis tiempos libres me gusta explorar el mundo de hyrule y de vez en cuando tener
                     combates pokemon, todo esto mientras escucho musica, para poder explotar mi imaginación aun mas.
                 </p>
             </section>
@@ -106,9 +108,94 @@
             </svg>
         </div>
     </header>
-    <section>
-
-    </section>
+    <!-- Seccion de los proyectos, esta seccion estara por debajo de la seccion de 
+    la portada, esta se activara cuando se oculte la portada-->
+    <main>
+        <section class="contCuerpBody">
+            <div class="contIzq">
+                <div class="seleccionCab">
+                    <label>Seleccione el lenguaje</label>
+                    <select name="Lenguajes" id="SelectLenguaje">
+                        <option disabled selected>Lenguajes</option>
+                        <option value="java">Java</option>
+                        <option value="html-css">HTML, JavaScript y CSS</option>
+                        <option value="CSH">C#</option>
+                        <option value="python">Python</option>
+                        <option value="kotlin">Kotlin</option>
+                        <option value="mysql">MySql</option>
+                    </select>
+                </div>
+                <div class="cuerpoIzq">
+                    <p>Lenguaje: <span id="titLenguaje"></span></p>
+                    <div class="descripcionL">
+                        <p id="descripLenguaje"></p>
+                    </div>
+                    <div class="experiencia">
+                        <!-- Clasificare el nivel de experiencia mediante estrellas con color, del 1 al 5 -->
+                        <span >
+                            <svg class="svgStar" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                            <path
+                                d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z" />
+                        </svg>
+                        </span>
+                        <!--  -->
+                        <span>
+                            <svg class="svgStar" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                            <path
+                                d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z" />
+                        </svg>
+                        </span>
+                        <!--  -->
+                        <span>
+                            <svg class="svgStar" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                            <path
+                                d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z" />
+                        </svg>
+                        </span>
+                        <!--  -->
+                        <span>
+                            <svg class="svgStar" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                            <path
+                                d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z" />
+                        </svg>
+                        </span>
+                        <!--  -->
+                        <span>
+                            <svg class="svgStar" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+                            <path
+                                d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z" />
+                        </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Trata de agrandar el otro es para una prueba  -->
+            <div class="contDer ">
+                <div class="cabTitulo">
+                    <p>Proyectos</p>
+                    <span id="infoAlerta">Seleccione un lenguaje para poder acceder a mis proyectos.</span>
+                </div>
+                
+                <div  id="proyectos-cont">
+                </div>
+                <!-- <div class="cardInfoProyect">
+                    <div class="contVideo">
+                        <iframe class="videoYT"  src="https://www.youtube.com/embed/8iInPYD390Y?si=ZBsKi--Hzt0qq85t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="infoPrograma">
+                        <div class="tituloProy">Gestor de biblioteca en Java Swing</div>
+                        <div class="descripProy">
+                            Proyecto personal realizado en Java Swing con uso de base de datos de 
+                            MySQL, este es uno de mis primeros proyectos grandes e individuales que he realizado,
+                            aqui aprendi cosas basicas como la importancia del uso de bloques try-catch, separacion de diseño
+                            y logica de negocio.
+                        </div>
+                    </div>
+                </div> -->
+                
+            </div>
+        </section>
+    </main>
     <script src="scritp.js"></script>
 </body>
 

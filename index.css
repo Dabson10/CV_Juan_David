@@ -2,6 +2,7 @@
     font-family: "IBM Plex Mono", monospace;
     font-weight: 400; 
     font-style: normal;
+    /* color: #b3b7ba */
 }
 
 body{
@@ -12,7 +13,10 @@ body{
 header{
     width: 100%;
     /* background-color: #27374D; */
-    background-color: #6C698D;
+    /* background-color: #6C698D; */
+    /* background-color: #010101; */
+    background-color: #312E2E;
+    /* background-color: #090F15; */
     height: 100vh;
     display:flex;
     flex-direction: column;
@@ -106,7 +110,7 @@ header{
     width: 97%;
     justify-content: space-between;
     align-items: center;
-    border-top:1px solid #DDE6ED;
+    border-top:1px solid #6C698D;
     margin:auto;
     padding: 0 15px;
     margin-bottom:0 ;
@@ -116,6 +120,137 @@ header{
     width: 25px;
     fill: #98A1BC;
 }
+
+/* Siguientes estilos es para los contenedores de los proyectos. */
+main{
+    background-color: #6E6A6F;
+    background-image: url(./imagen/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+}
+.contCuerpBody{
+    width: 80%;
+    height: 85%;
+    position:absolute;
+    top:53%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display:flex;
+    flex-direction: row;
+    gap:20px
+}
+.contIzq, .contDer{
+    border-radius:1em;
+}
+
+/* Contenedor izquierdo */
+.contIzq{
+    width: 23%;
+}
+.seleccionCab{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    padding:30px;
+    border: 1px solid white;
+    border-radius:.5em;
+    backdrop-filter: blur(8px);
+    color: #D4D2D5;
+
+}
+select{
+    background-color:transparent;
+    border:none;
+    border-bottom: 1px solid black;
+    color:#bcbaba;
+    padding:3px;
+    font-size: 16px;
+    /* height: 2em; */
+    /* padding:5px */
+}
+.cuerpoIzq{
+    padding: 10px 30px;
+    margin-top:10px;
+    border-radius:.5em;
+    border:1px solid white;
+    backdrop-filter: blur(8px);
+    color: #D4D2D5;
+
+}
+.descripcionL{
+    margin: 20px 0;
+}
+.experiencia{
+    display:flex;
+    flex-direction: row;
+    gap:10px
+}
+.svgStar{
+    width: 25px;
+}
+/* Contenedor derecho */
+.contDer{
+    width: 75%;
+    height: 85vh;
+    border: 2px solid white;
+    overflow-y:scroll;
+}
+.contDer::-webkit-scrollbar{
+    width: 0;
+}
+
+.cabTitulo{
+    position:sticky;
+    top:0;
+    left: 0;
+    padding:20px;
+    z-index: 999999;
+    justify-content: center;
+    text-align: center;
+    backdrop-filter: blur(18px);
+    background-color: #312e2e7f;
+    color: #D4D2D5;
+}.cabTitulo p {
+    margin: 0 0 5px 0;
+}
+/* Contenedor para la experiencia de trabajo */
+.cardInfoProyect{
+    display:flex;
+    flex-direction: row;
+    /* margin:auto; */
+    width: 95%;
+    height: auto;
+    background-color: #312e2ec2;
+    backdrop-filter: blur(10px);
+    color: #D4D2D5;
+    margin:10px auto;
+    border-radius: .4em;
+    /* gap:20px */
+}
+.videoYT{
+    width: 300px;
+    height: 208px;
+    border-radius: 1em;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 10px 10px;
+}
+.tituloProy{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    padding:15px 0 5px;
+    font-weight: 700;
+}
+.descripProy{
+    padding: 10px 20px;
+    text-align: justify;
+}
+
+
 
 /* Media queries */
 /* Laptops */
@@ -132,6 +267,9 @@ header{
         padding-top:130px;
         overflow-y: scroll;
         height: 50%;
+    }
+    .textPort::-webkit-scrollbar{
+        width: 0;
     }
 }
 
@@ -209,7 +347,7 @@ header{
 }
 
 /* Telefonos mas pequeños 1 */
-@media screen and (min-width: 376px) and (max-width: 425px) {
+@media screen and (min-width: 376px) and (max-width: 426px) {
     .cuerpoHeader{
         width: 85%;
         top:7%;
@@ -231,7 +369,7 @@ header{
         height: 90px;
     }
     .textPort{
-        padding-top:345px;
+        padding-top:385px;
         overflow-y: scroll;
         height: 50%;
     }
@@ -241,10 +379,11 @@ header{
 }
 
 /* Telefonos mas pequeños 2 */
-@media screen and (min-width: 320px) and (max-width: 375px) {
+@media screen and (min-width: 320px) and (max-width: 376px) {
     .cuerpoHeader{
         width: 95%;
         position:relative;
+        /* height: 5vh; */
         top:auto;
         left:auto;
         padding:85px 0 90px 0;
@@ -295,5 +434,9 @@ header{
 }
 .reducir{
     height: 8vh;
+    transition: height 1s ease;
+}
+.agrandar{
+    height: auto;
     transition: height 1s ease;
 }
