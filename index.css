@@ -49,7 +49,7 @@ header{
     margin: 0;
     margin-bottom:auto;
     justify-content: center;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #FFF;
     padding-bottom:1em 
 }
 .imgPerfil{
@@ -110,7 +110,7 @@ header{
     width: 97%;
     justify-content: space-between;
     align-items: center;
-    border-top:1px solid #6C698D;
+    border-top:1px solid #FFFF;
     margin:auto;
     padding: 0 15px;
     margin-bottom:0 ;
@@ -128,8 +128,8 @@ main{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-    
+    min-height: 100vh;
+
 }
 .contCuerpBody{
     width: 80%;
@@ -259,6 +259,12 @@ select{
 }.linkWeb:hover{
     color:#ebd6f7
 }
+.contVideo{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin:0 auto;
+    }
 
 
 
@@ -301,6 +307,27 @@ select{
     .footerHeader{
         padding: 0px;
     }
+    /* Diseños para el cuerpo de los proyectos */
+    .contCuerpBody{
+        width: 95%;
+    }
+    .contIzq{
+        width: 25%;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .cuerpoIzq{
+        padding: 10px 15px
+    }
+    .svgStar{
+        width: 20px;
+    }
+    .videoYT{
+        width: 250px;
+    }
+    .descripProy{
+        font-size: 14px;
+    }
 }
 
 /* Moviles grandes */
@@ -322,6 +349,35 @@ select{
     }
     .footerHeader{
         padding: 0px;
+    }
+    /* Diseños para el cuerpo de los proyectos */
+    .contCuerpBody{
+        width: 95%;
+        /* background-color: red; */
+    }
+    .contIzq{
+        width: 25%;
+        font-size: 13px;
+        line-height: 1.3;
+    }
+    .seleccionCab{
+        padding:10px;
+        font-size: 14px;
+    }
+    .cuerpoIzq{
+        padding: 2px 15px
+    }
+    .svgStar{
+        width: 15px;
+    }
+    .videoYT{
+        width: 375px;
+    }
+    .cardInfoProyect{
+        flex-direction: column-reverse;
+    }
+    .descripProy{
+        font-size: 14px;
     }
 }
 /* Moviles grandes 2*/
@@ -353,6 +409,44 @@ select{
     }
     .footerHeader{
         padding: 0px;
+    }
+    /* Diseños para el cuerpo de los proyectos */
+    .contCuerpBody{
+        width: 95%;
+        flex-direction: column;
+    }
+    .contIzq{
+        width: 100%;
+        font-size: 13px;
+        line-height: 1.3;
+        color:#312E2E
+    }
+    .seleccionCab{
+        padding:10px;
+        font-size: 14px;
+        color:#ffffff
+    }
+    .cuerpoIzq{
+        padding: 2px 15px;
+        color:#ffffff
+    }
+    .contDer{
+        width: 100%;
+    }
+    .cabTitulo{
+        position:relative;
+    }
+    .svgStar{
+        width: 15px;
+    }
+    .videoYT{
+        width: 380px;
+    }
+    .cardInfoProyect{
+        flex-direction: column-reverse;
+    }
+    .descripProy{
+        font-size: 14px;
     }
 }
 
@@ -386,6 +480,7 @@ select{
     .footerHeader{
         padding: 0px;
     }
+    
 }
 
 /* Telefonos mas pequeños 2 */
@@ -393,7 +488,7 @@ select{
     .cuerpoHeader{
         width: 95%;
         position:relative;
-        /* height: 5vh; */
+        height: 0;
         top:auto;
         left:auto;
         padding:85px 0 90px 0;
@@ -409,7 +504,7 @@ select{
     display:flex;
     justify-content: center;
     align-items: center;
-}
+    }
     .imgPerfil{
         width: 70px;
         height: 70px;
@@ -426,6 +521,11 @@ select{
         padding: 0px;
         background-color: #6C698D;
         z-index: 2;
+        width: 100%;
+        height: 5vh;
+    }
+    .reducir{
+        bottom: 735px;
     }
 }
 
