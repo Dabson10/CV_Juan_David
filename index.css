@@ -140,7 +140,10 @@ main{
     transform: translate(-50%, -50%);
     display:flex;
     flex-direction: row;
-    gap:20px
+    gap:20px;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility, opacity 2s ease;
 }
 .contIzq, .contDer{
     border-radius:1em;
@@ -231,8 +234,8 @@ select{
     /* gap:20px */
 }
 .videoYT{
-    width: 300px;
-    height: 208px;
+    /* width: 300px;
+    height: 208px; */
     border-radius: 1em;
     justify-content: center;
     align-items: center;
@@ -248,6 +251,13 @@ select{
 .descripProy{
     padding: 10px 20px;
     text-align: justify;
+    line-height: 1.7;
+}
+.linkWeb{
+    color: #debaf3;
+    text-decoration: none;
+}.linkWeb:hover{
+    color:#ebd6f7
 }
 
 
@@ -430,7 +440,7 @@ select{
 .ocultar{
     opacity:0;
     visibility: hidden;
-    transition:all 1s ease;
+    transition:all 1.5s ease;
 }
 .reducir{
     height: 8vh;
