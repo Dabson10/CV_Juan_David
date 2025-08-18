@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //El siguiente bloque es para los proyectos de python
         'python': {
             titulo: "Python",
-            descripcion: `Este lenguaje de programación no le agarre tanto gusto a pesar de que lo utilice demaciadas veces en trabajos escolares, esto por que me habia acostumbrado tanto a lenguajes como java o c# pero no digo que sea malo, me interesan diferentes areas en especifico la de inteligencia artificial y espero algun dia poder estudiar esto.`,
+            descripcion: `Este lenguaje de programación no le agarre tanto gusto a pesar de que lo utilice demaciadas veces en trabajos escolares, esto por que me habia acostumbrado tanto a lenguajes como java o c#, me interesan areas como la Inteligencia artificial.`,
             calificacion: 2,
             proyectos: [
                 {

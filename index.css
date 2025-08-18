@@ -8,7 +8,7 @@
 body{
     padding:0;
     margin:0;
-    max-height: 100vh;
+    height: 100vh;
 }
 header{
     width: 100%;
@@ -52,7 +52,7 @@ header{
     border-bottom: 1px solid #FFF;
     padding-bottom:1em 
 }
-.imgPerfil{
+/* .imgPerfil{
     width: 175px;
     height: 175px;
     border-radius: .5em;
@@ -61,7 +61,7 @@ header{
     width: 25%;
     display:flex;
     justify-content: center;
-}
+} */
 .titulo{
     width: 30%;
     display:flex;
@@ -113,7 +113,7 @@ header{
     border-top:1px solid #FFFF;
     margin:auto;
     padding: 0 15px;
-    margin-bottom:0 ;
+    margin-bottom:0;
     color: #DDE6ED;
 }
 .svgAbajo{
@@ -128,7 +128,7 @@ main{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    height: 100vh;
 
 }
 .contCuerpBody{
@@ -168,11 +168,14 @@ select{
     background-color:transparent;
     border:none;
     border-bottom: 1px solid black;
-    color:#bcbaba;
+    color:#FFF;
     padding:3px;
     font-size: 16px;
     /* height: 2em; */
     /* padding:5px */
+}
+option{
+    color:#6E6A6F
 }
 .cuerpoIzq{
     padding: 10px 30px;
@@ -293,6 +296,8 @@ select{
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .cuerpoHeader{
         width: 80%;
+        top:7%;
+        left: 8%;
     }
     .titulo{
         display:flex;
@@ -312,12 +317,19 @@ select{
         width: 95%;
     }
     .contIzq{
-        width: 25%;
+        width: 30%;
         font-size: 14px;
         line-height: 1.6;
     }
+    .seleccionCab{
+        padding:10px
+    }
     .cuerpoIzq{
-        padding: 10px 15px
+        padding: 10px 15px;
+        gap:0;
+    }
+    .cuerpoIzq p{
+        margin:0;
     }
     .svgStar{
         width: 20px;
@@ -335,7 +347,7 @@ select{
     .cuerpoHeader{
         width: 85%;
         top:7%;
-        left:6%;
+        left:5%;
     }
     .titulo{
         display:flex;
@@ -356,16 +368,22 @@ select{
         /* background-color: red; */
     }
     .contIzq{
-        width: 25%;
+        width: 27%;
         font-size: 13px;
         line-height: 1.3;
     }
     .seleccionCab{
         padding:10px;
-        font-size: 14px;
+        font-size: 13px;
+    }
+    select{
+        font-size: 13px;
     }
     .cuerpoIzq{
         padding: 2px 15px
+    }
+    .cuerpoIzq p{
+        margin: 5px 0 0;
     }
     .svgStar{
         width: 15px;
@@ -392,16 +410,16 @@ select{
         width: 75%;
         align-items: center;
     }
-    .contImgP{
+    /* .contImgP{
     width: 25%;
     display:flex;
     justify-content: center;
     align-items: center;
-}
-    .imgPerfil{
+} */
+    /* .imgPerfil{
         width: 100px;
         height: 100px;
-    }
+    } */
     .textPort{
         padding-top:345px;
         overflow-y: scroll;
@@ -462,23 +480,30 @@ select{
         width: 75%;
         align-items: center;
     }
-    .contImgP{
+    /* .contImgP{
     width: 25%;
     display:flex;
     justify-content: center;
     align-items: center;
-}
-    .imgPerfil{
+} */
+    /* .imgPerfil{
         width: 90px;
         height: 90px;
+    } */
+    .cabCuerpo{
+        /* margin-top:50px */
     }
     .textPort{
-        padding-top:385px;
+        padding-top:325px;
         overflow-y: scroll;
         height: 50%;
+        line-height: 1.4;
+        font-size: 16px;
     }
     .footerHeader{
         padding: 0px;
+        /* margin-bottom: 50px; */
+
     }
     /* Diseños para el cuerpo de los proyectos */
     .contCuerpBody{
@@ -506,11 +531,14 @@ select{
     .cabTitulo{
         position:relative;
     }
+    select{
+        color:#FFF;
+    }
     .svgStar{
         width: 15px;
     }
     .videoYT{
-        width: 380px;
+        width: 300px;
     }
     .cardInfoProyect{
         flex-direction: column-reverse;
@@ -536,7 +564,10 @@ select{
         align-items: center;
         justify-content: space-around;
     }
-    .contImgP{
+    .cabCuerpo{
+        margin-top:100px
+    }
+    /* .contImgP{
     width: 25%;
     display:flex;
     justify-content: center;
@@ -545,21 +576,27 @@ select{
     .imgPerfil{
         width: 70px;
         height: 70px;
-    }
+    } */
     .textPort{
-        padding-top:425px;
+        padding-top:320px;
         /* padding-bottom: 15px; */
         margin-bottom: 10px;
         overflow-y: scroll;
         width: 95%;
-        height:15%;
+        height:10%;
+        line-height: 1.5;
+        font-size: 15px;
     }
     .footerHeader{
         padding: 0px;
         background-color: #312E2E;
         z-index: 2;
+        margin-bottom: 50px;
         width: 100%;
         height: 5vh;
+    }
+    select{
+        color:#FFF;
     }
     .reducir{
         bottom: 735px;
@@ -594,7 +631,7 @@ select{
         width: 15px;
     }
     .videoYT{
-        width: 380px;
+        width: 250px;
     }
     .cardInfoProyect{
         flex-direction: column-reverse;
