@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // El siguiente es para los proyectos de paginas web
         'html-css': {
             titulo: "HTML, CSS Y JS",
-            descripcion: `Este conjunto de lenguajes tanto de etiquetado, de diseño como de logica, fueron los que hicieron que me gustara la programación y que me decidiera a estudiar algo relacionado con programación como 'sistemas computacionales'.`,
+            descripcion: `Este conjunto de lenguajes tanto de etiquetado, de diseño como de logica, fueron los que hicieron que me gustara la programación y que me decidiera a estudiar 'sistemas computacionales'.`,
             calificacion: 2,
             proyectos: [
                 {
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //El siguiente bloque es para los proyectos de python
         'python': {
             titulo: "Python",
-            descripcion: `Este lenguaje de programación no le agarre tanto gusto a pesar de que lo utilice demaciadas veces en trabajos escolares, esto por que me habia acostumbrado tanto a lenguajes como java o c#, me interesan areas como la Inteligencia artificial.`,
+            descripcion: `Este lenguaje de programación no le agarre tanto gusto a pesar de que lo utilice demaciadas veces en trabajos escolares, esto por que me habia acostumbrado tanto a lenguajes como java o c#.`,
             calificacion: 2,
             proyectos: [
                 {
