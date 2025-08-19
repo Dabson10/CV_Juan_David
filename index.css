@@ -196,6 +196,7 @@ option{
 }
 .svgStar{
     width: 25px;
+    fill: #312E2E;
 }
 /* Contenedor derecho */
 .contDer{

@@ -165,12 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'html-css': {
             titulo: "HTML, CSS Y JS",
             descripcion: `Este conjunto de lenguajes tanto de etiquetado, de diseño como de logica, fueron los que hicieron que me gustara la programación y que me decidiera a estudiar 'sistemas computacionales'.`,
-            calificacion: 2,
+            calificacion: 4,
             proyectos: [
                 {
                     anchoV: 0,
                     altoV: 0,
-                    codeVideo: "",
+                    codeVideo: "https://www.youtube.com/embed/8iInPYD390Y?si=7Aw8h5b9kdeA8R-F",
                     titulo: "Clon de UTC web",
                     descripcion: "Proyecto escolar en donde se me solicito clonar la pagina web de la universidad en donde estudio que es Universidad Tres Culturas, en este proyecto aprendi realmente como funciona el flexbox y a ajustar correctamente contenedores, aunqu aun estoy aprendiendo, realmente me siento seguro con el conocimiento que aprendi de este proyecto.<br> Puedes revisar el sitio web en el siguiente link.",
                     link: "https://clon-utc.netlify.app/",
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     anchoV: 0,
                     altoV: 0,
-                    codeVideo: "",
+                    codeVideo: "https://www.youtube.com/embed/8iInPYD390Y?si=7Aw8h5b9kdeA8R-F",
                     titulo: "Equipo pokemon",
                     descripcion: "Proyecto escolar en donde se me pidio realizar una app movil a libre gusto y en equipo, en este proyecto yo me encargue de la realizacion de las transiciones o animaciones de las pantallas, por ejemplo en la elección del personaje y el panel de equipo.  <br> En este proyecto aprendi a hacer transiciones y a manejar diferentes vistas en una misma pagina web, aumentando mis conocimientos de basicos a intermedios.",
                     link: "https://equipo-pokemonbw.netlify.app/",
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     anchoV: 0,
                     altoV: 0,
-                    codeVideo: "",
+                    codeVideo: "https://www.youtube.com/embed/8iInPYD390Y?si=7Aw8h5b9kdeA8R-F",
                     titulo: "Rhema.Logos",
                     descripcion: "Este sitio web es dedicado a dar a conocer una pagina de Instagram en la cual se habla de estudios biblicos, aparte de redirigir a las diferentes redes sociales, tambien sirve para descargar contenido en PDF de diferentes estudios realizados acerca de la biblia. <br> Al realizar este sitio web el enfoque fue muy claro, primero movil, enseñandome a hacer paginas web faciles y reduciendo el codigo de media queries. realmente aprendi a usar media-queries y posiciones.",
                     link: "https://rhema-logos.netlify.app/",
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     anchoV: 0,
                     altoV: 0,
-                    codeVideo: "",
+                    codeVideo: "https://www.youtube.com/embed/8iInPYD390Y?si=7Aw8h5b9kdeA8R-F",
                     titulo: "Ciberacoso en mexico",
                     descripcion: "Este proyecto escolar me gusto mucho ahcerlo, ya que pues aprendi acerca del ciberacoso y este proyecto fue un tipo concurso entre compañeros de la escuela y el haber sido el que hizo mayor parte del sitio web vi que era una necesidad utilizar media queries en cualquier sitio web, para que este sea responsive. No gane el concurso ya que pues se fueron por un diseño mas simple y menos vistoso.",
                     link: "https://ciberacoso.netlify.app/",
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     anchoV: 0,
                     altoV: 0,
-                    codeVideo: "",
+                    codeVideo: "https://www.youtube.com/embed/8iInPYD390Y?si=7Aw8h5b9kdeA8R-F",
                     titulo: "Ruta de aprendizaje",
                     descripcion: "En este lenguaje no realice proyectos grandes, pero autonomamente realice una ruta de aprendizaje de python, dejare un repositorio con las diferentes practicas de aprendizaje que hice.",
                     link: "https://github.com/Dabson10/Ruta_Aprendizaje_Py",
@@ -226,12 +226,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'kotlin': {
             titulo: "Kotlin",
             descripcion: `Este lenguaje lo estudie por curiosidad y me gusto bastante tanto que hice la mi tesis en un proyecto usando kotlin.`,
-            calificacion: 3,
+            calificacion: 4,
             proyectos: [
                 {
                     anchoV: 0,
                     altoV: 0,
-                    codeVideo: "",
+                    codeVideo: "https://www.youtube.com/embed/8iInPYD390Y?si=7Aw8h5b9kdeA8R-F",
                     titulo: "Gestor de comandas para ",
                     descripcion: "Este proyecto fue realizado para mi tesis universitaria, busca administrar las ventas y comandas de un restaurante, viendo el estado de los pedidos, se pueden cambiar y ver el estado tanto para meseros como para chef, cuenta con lecutura por voz y conexion a base de datos en supabase. <br> Este proyecto es el resultado de muchas horas de estudio y dedicación, en este proyecto se podria decir que deje todos mis conocimientos tanto en programación(logica) como en el desarrollo de la base de datos, si esta tiene ciertos puntos de mejora pero fue estructurada con total claridad en su funcionamiento. <br> aun no cuenta con video ya que aun se esta produciendo, tambien tendra un sitio web para poder ver el funcionamiento de esta.",
                     link: "",
@@ -247,7 +247,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const infoAlerta = document.getElementById('infoAlerta')
     const tituloLenguaje = document.getElementById('titLenguaje')
     const descLenguaje = document.getElementById('descripLenguaje')
-    if (elementoSeleccionado && tarjetaExp && infoAlerta && tituloLenguaje && descLenguaje) {
+    const svgStar = document.querySelectorAll('.svgStar')
+    if (elementoSeleccionado && tarjetaExp && infoAlerta && tituloLenguaje && descLenguaje && svgStar.length > 0) {
         //Como existen entonces procedemos al evento de cambio de seleccion
         elementoSeleccionado.addEventListener('change', (event) => {
             // alert('dede')
@@ -268,6 +269,22 @@ document.addEventListener('DOMContentLoaded', () => {
             infoAlerta.innerText = ``;
             tituloLenguaje.innerText = lenguajeObj.titulo
             descLenguaje.innerText = lenguajeObj.descripcion
+            console.log(`La calificacion es de: ${lenguajeObj.calificacion}`)
+            let calificacion = lenguajeObj.calificacion
+            //Ahora se recorrera el sg aplicando los colores a cada estrella
+            let contador = 0
+            svgStar.forEach(svg =>{
+                contador++
+                if(contador <= calificacion){
+                    console.log(`Es diferente. estas en la posicion: ${contador}`)
+                    svg.style.fill= '#FFF'
+                }else{
+                    console.log(`Es igual, estas en la posicion: ${contador}`)
+                    svg.style.fill= '#312E2E'
+
+                }
+            })
+            
             proyectosLenguaje.forEach(proyecto => {
                 // descLenguaje.innerText = proyecto.descripcion
                 const tarjetaProyecto = document.createElement('div')
@@ -293,6 +310,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 tarjetaExp.appendChild(tarjetaProyecto)
             })
+            if(proyectosLenguaje.calificacion > 0){
+                alert(`El valor es de: ${proyectosLenguaje.calificacion}`)
+            }
         })
     }
 
