@@ -248,3 +248,8 @@ function experiencia(calificacion) {
     }
     return `[${rango}] ${calificacion} de 10`;
 }
+
+//Función para obtener y enviar los datos del usuario.
+function enviarCorreo() {
+    const formulario = document.getElementById('form-user');
+}

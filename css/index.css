@@ -123,15 +123,25 @@ body {
 
 .links {
     border: 3px solid var(--border-color);
-    padding: .6em;
+    padding: .4em 1.1rem;
     color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .links:hover {
     color: var(--btn-text);
-    background-color: var(--shadow-color);
+    background-color: var(--accent-color);
+}
+
+.links:active {
+    transform: translate(-3px, -3px);
+}
+
+.cont-links {
+    display: flex;
+    gap: 1.2rem;
 }
 
 .card-sobremi {
@@ -282,12 +292,122 @@ body {
     padding: 1em
 }
 
-footer {
+/* Diseño para el formulario de contacto */
+.cont-form {
+    margin-top: 3em;
+    padding: 2em;
+    border: 3px solid var(--border-color);
+    box-shadow: 8px 8px 0 var(--shadow-color);
+    background-color: var(--card-bg);
+}
+
+.form-user {
     display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    gap: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Este contendor estara en columna en dispositivos mobiles, pero en desktop sera en row */
+.cont-datos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+
+.cont-input,
+.cont-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+
+.cont-input input,
+.cont-grupo input,
+textarea {
+    width: 100%;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 3px solid var(--border-color);
+    padding: 1em;
+    font-size: 1rem;
+    transition: transform 0.1s;
+}
+
+.cont-grupo textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.cont-input input:focus,
+.cont-grupo input:focus,
+textarea:focus {
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 0 var(--shadow-color);
+}
+
+.btn-enviar {
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: 3px solid var(--border-color);
+    padding: 1em;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.btn-enviar:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px var(--shadow-color);
+}
+
+.btn-enviar:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px;
+}
+
+.form-feedback {
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    font-weight: 700;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.form-feedback.success {
+    background: #00ff00;
+    color: #000;
+}
+
+.form-feedback.error {
+    background: #ff0000;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+
+footer {
+    margin: 2em auto 0;
+    width: 100%;
+    padding-top: 3em;
+    border-top: 3px solid var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     font-size: .8rem;
 }
+
 
 /* Media queries. */
 
@@ -308,5 +428,15 @@ footer {
 
     .cont-infoProyect {
         width: 55%;
+    }
+
+    .cont-datos {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+    }
+
+    .cont-input {
+        width: 50%;
     }
 }
