@@ -15,7 +15,16 @@
 </head>
 
 <body>
+    <div class="cont-alert cerrar" id="cont-alert">
+        <div class="cab-alert">
+            <p id="titulo"></p>
+        </div>
+        <div class="body-alert">
+            <p id="mensaje"></p>
+        </div>
+    </div>
     <div class="contGeneral">
+
         <div class="cambioTema">
             <span class="temaL" id="tema-text">MODO CLARO</span>
             <div class="" id="btn-cambio">
@@ -27,12 +36,11 @@
         <header class="cabecera">
             <div class="tituloCab">
                 <h1 class="nombre">JUAN DAVID ALMARAZ GONZALEZ <3 </h1>
-                        <p class="p-carrera">INGENIERO EN SISTEMAS >|< PROGRAMADOR</p>
-                                <div class="cont-links">
-                                    <a href="https://github.com/Dabson10" class="links">GITHUB </a>
-                                    <a href="./file/CV_Juan_David_Almaraz_Gonzalez.pdf" target="_blank"
-                                        class="links">CV</a>
-                                </div>
+                        <p class="p-carrera">INGENIERO EN SISTEMAS &gt;|&lt; PROGRAMADOR</p>
+                        <div class="cont-links">
+                            <a href="https://github.com/Dabson10" class="links">GITHUB </a>
+                            <a href="./file/CV_Juan_David_Almaraz_Gonzalez.pdf" target="_blank" class="links">CV</a>
+                        </div>
             </div>
             <section class="card-sobremi">
                 <h2>SOBRE MI</h2>
@@ -56,12 +64,12 @@
                 <h3 class="tit-exp">TECNOLOGÍAS Y PROYECTOS</h3>
                 <nav class="cont-botones">
                     <button class="btn-temas activo" data-tecnologia="java">JAVA</button>
-                    <button class="btn-temas" data-tecnologia="jpa">JPA >|< Hibernate</button>
-                            <button class="btn-temas" data-tecnologia="mysql">MYSQL</button>
-                            <button class="btn-temas" data-tecnologia="web">WEB</button>
-                            <button class="btn-temas" data-tecnologia="kotlin">KOTLIN</button>
-                            <button class="btn-temas" data-tecnologia="csharp">C#</button>
-                            <button class="btn-temas" data-tecnologia="python">PYTHON</button>
+                    <button class="btn-temas" data-tecnologia="jpa">JPA &gt;|&lt; Hibernate</button>
+                    <button class="btn-temas" data-tecnologia="mysql">MYSQL</button>
+                    <button class="btn-temas" data-tecnologia="web">WEB</button>
+                    <button class="btn-temas" data-tecnologia="kotlin">KOTLIN</button>
+                    <button class="btn-temas" data-tecnologia="csharp">C#</button>
+                    <button class="btn-temas" data-tecnologia="python">PYTHON</button>
                 </nav>
             </div>
         </main>
@@ -98,9 +106,12 @@
                 </div> -->
             </div>
         </section>
-        <!-- <section class="cont-form">
-            <h2>CONTACTO</h2>
-            <form action="" class="form-user">
+        <section class="cont-form">
+            <div class="cont-cabForm">
+                <h2>CONTACTO</h2>
+                <button type="button" class="btn-mensaje" id="autocompletar">Autocompletar mensaje</button>
+            </div>
+            <form action="" id="form-user" class="form-user">
                 <div class="cont-datos">
                     <div class="cont-input">
                         <label for="">NOMBRE</label>
@@ -108,26 +119,27 @@
                     </div>
                     <div class="cont-input">
                         <label for="">CORREO</label>
-                        <input type="email" name="mail" placeholder="example@email.com">
+                        <input type="email" name="mail" placeholder="example@email.com" required>
                     </div>
                 </div>
                 <div class="cont-grupo">
                     <label for="">ASUNTO</label>
-                    <input type="text" name="header" placeholder="Motivo de contacto." required>
+                    <input type="text" name="header" id="asunto" placeholder="Motivo de contacto." required>
                 </div>
                 <div class="cont-grupo">
                     <label for="">MENSAJE</label>
-                    <textarea name="body" id="" placeholder="Cúentame tu idea..."></textarea>
+                    <textarea name="body" id="mensajeB" placeholder="Cúentame tu idea..." required></textarea>
                 </div>
                 <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
                 <div id="form-message" class="form-feedback hidden"></div>
             </form>
-        </section> -->
+        </section>
+
         <footer>
             <p class="foot-text">2026 JUAN DAVID ALMARAZ GONZALEZ | PORTFOLIO </p>
         </footer>
     </div>
-    <script src="./js/index.js"></script>
+    <script type="module" src="./js/index.js"></script>
 </body>
 
 </html>

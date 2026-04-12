@@ -1,3 +1,4 @@
+import { mandarCorreo } from "./api.js"
 document.addEventListener('DOMContentLoaded', () => {
     // Inicialización del Tema
     const currentTheme = localStorage.getItem('theme');
@@ -16,6 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     maquetar('java');
     cambioTema();
     cambiarTec();
+    //Formulario de contacto
+    enviarCorreo();
+    //Rellenar formulario.
+    rellenar();
 });
 
 function cambioTema() {
@@ -49,6 +54,13 @@ const tecnologias = {
                 video: "./image/to-do.png",
                 link: "https://to-do-dabson.netlify.app/",
                 linkText: "VISITAR SITIO..."
+            },
+            {
+                titulo: "Send Mail >|< Enviar correos.",
+                descripcion: "Proyecto con el que puedes enviar correos electronicos con dos versiones una usando el protocolo SMTP y otra Usando HTTP para enviar correos sin restriccion de servidores.",
+                video: "",
+                link: "https://github.com/Dabson10/Send_mail_Java/blob/master/src/main/java/org/github/dabson10/sendmail/controller/CorreosController.java",
+                linkText: "VER REPOSITORIO..."
             },
             {
                 titulo: "ADMINISTRADOR BIBLIOTECARIO",
@@ -249,7 +261,93 @@ function experiencia(calificacion) {
     return `[${rango}] ${calificacion} de 10`;
 }
 
+//Función para agregar un mensaje automatico en el formulario
+function rellenar() {
+    const btnRellenar = document.getElementById('autocompletar');
+    const inpAsunto = document.getElementById('asunto');
+    const inpMensaje = document.getElementById('mensajeB');
+    btnRellenar.addEventListener('click', () => {
+        inpAsunto.value = ""
+        inpAsunto.value = "Contacto desde el Portafolio"
+        inpMensaje.value = ""
+        inpMensaje.value = "Hola, vi tu trabajo y me gustaría que estuviéramos en contacto. Saludos."
+        alerta('Formulario', 'Ingrese un correo que pueda recibir y enviar correos.')
+    });
+}
+
 //Función para obtener y enviar los datos del usuario.
-function enviarCorreo() {
+async function enviarCorreo() {
     const formulario = document.getElementById('form-user');
+    formulario.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const form = new FormData(formulario);
+        const datos = Object.fromEntries(form.entries());
+        for (let i in datos) {
+            datos[i] = datos[i].trim();
+        }
+        // Valida que los inputs tengan al menos un caracter.
+        const validar = validarInputs(datos);
+        if (validar) {
+            alerta('Formulario', 'Rellene todos los campos del formulario.')
+            return
+        }
+        //Valida que el correo cumpla con un formato
+        const correoV = validarCorreo(datos);
+        if (!correoV) {
+            alerta('Formulario', 'El correo no cumple con el formato requerido.');
+            return;
+        }
+        try {
+            const correo = await mandarCorreo(datos);
+            alerta('Envio correcto.', 'En un momento recibira un correo electronico validando el envio del formulario.');
+            formulario.reset();
+        } catch (error) {
+            alerta("Error", error.message)
+        }
+
+    });
+}
+
+function validarInputs(datos) {
+    let valores = "";
+    for (let i in datos) {
+        if (datos[i].trim() === "") {
+            valores += `${i} `
+        }
+    }
+    return valores;
+}
+
+function validarCorreo(datos) {
+    //Valida que los inputs se ingresen datos correctos y el correo sea correcto.
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;;
+    const correo = datos.mail;
+    return regex.test(correo);
+}
+
+function alerta(titulo, mensaje) {
+    const alerta = document.getElementById('cont-alert');
+    const cont_titulo = document.getElementById('titulo');
+    const cont_mensaje = document.getElementById('mensaje');
+
+    // Reiniciamos el estado de la alerta
+    alerta.classList.remove('cerrar', 'activo');
+
+    // El "truco" del reflow: forzamos al navegador a registrar que quitamos la clase
+    // antes de volver a ponerla, para que la animación empiece de cero.
+    void alerta.offsetWidth;
+
+    alerta.classList.add('activo');
+
+    cont_titulo.textContent = titulo;
+    cont_mensaje.textContent = mensaje;
+
+    // Escuchamos el final de la animación para ocultarla
+    alerta.addEventListener('animationend', (e) => {
+        if (e.animationName === 'alertTimer') {
+            alerta.classList.add('cerrar');
+            alerta.classList.remove('activo');
+        }
+    }, { once: true });
 }
