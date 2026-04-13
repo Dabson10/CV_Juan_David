@@ -1,6 +1,15 @@
 
 const url = "https://send-mail-java.onrender.com";
 
+export async function startServer() {
+    const despertar = await fetch(`${url}/mail/wakeup`, {
+        method: 'POST'
+    });
+    if (despertar.ok) {
+        console.log('Hola bienvenido.')
+    }
+}
+
 
 export async function mandarCorreo(datos) {
     const respuesta = await fetch(`${url}/mail/send`, {

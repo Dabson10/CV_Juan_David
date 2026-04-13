@@ -1,5 +1,7 @@
-import { mandarCorreo } from "./api.js"
+import { mandarCorreo, startServer } from "./api.js"
 document.addEventListener('DOMContentLoaded', () => {
+    //Despertamos el servidor.
+    startServer();
     // Inicialización del Tema
     const currentTheme = localStorage.getItem('theme');
     const contCambio = document.getElementById('cont-cambio');
