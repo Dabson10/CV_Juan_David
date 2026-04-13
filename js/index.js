@@ -1,29 +1,32 @@
 import { mandarCorreo, startServer } from "./api.js"
 document.addEventListener('DOMContentLoaded', () => {
-    //Despertamos el servidor.
-    startServer();
-    // Inicialización del Tema
-    const currentTheme = localStorage.getItem('theme');
-    const contCambio = document.getElementById('cont-cambio');
-    const temaTxt = document.getElementById('tema-text');
+    // Usamos setTimeout para desincronizar la carga pesada y no bloquear el hilo principal
+    setTimeout(() => {
+        // Despertamos el servidor.
+        startServer();
+        
+        // Inicialización de Contenido (lo más importante primero)
+        maquetar('java');
+        cambiarTec();
+        
+        // Inicialización del Tema
+        const currentTheme = localStorage.getItem('theme');
+        const contCambio = document.getElementById('cont-cambio');
+        const temaTxt = document.getElementById('tema-text');
 
-    if (currentTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-        contCambio.classList.add('cambio');
-        temaTxt.textContent = 'MODO OSCURO';
-    } else {
-        temaTxt.textContent = 'MODO CLARO';
-    }
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            contCambio.classList.add('cambio');
+            temaTxt.textContent = 'MODO OSCURO';
+        } else {
+            temaTxt.textContent = 'MODO CLARO';
+        }
 
-    // Inicialización de Contenido
-    maquetar('java');
-    cambioTema();
-    cambiarTec();
-    //Formulario de contacto
-    enviarCorreo();
-    //Rellenar formulario.
-    rellenar();
-});
+        cambioTema();
+        enviarCorreo();
+        rellenar();
+    }, 0);
+}, { passive: true });
 
 function cambioTema() {
     const btnCambio = document.getElementById('btn-cambio');
@@ -41,7 +44,7 @@ function cambioTema() {
             temaTxt.textContent = 'MODO CLARO';
             localStorage.setItem('theme', 'light');
         }
-    });
+    }, { passive: true });
 }
 
 const tecnologias = {
@@ -202,7 +205,7 @@ function cambiarTec() {
             btn.classList.add('activo');
             let btnData = btn.dataset.tecnologia;
             maquetar(btnData);
-        });
+        }, { passive: true });
     });
 }
 
@@ -233,7 +236,7 @@ function maquetar(data) {
         } else if (datos.video.trim() !== "") {
             mediaHTML = `
                 <div class="cont-vide">
-                    <iframe class="videoYT" src="https://www.youtube.com/embed/${datos.video}" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <iframe class="videoYT" src="https://www.youtube.com/embed/${datos.video}" title="YouTube video player" frameborder="0" allowfullscreen loading="lazy"></iframe>
                 </div>`;
         }
 
@@ -274,7 +277,7 @@ function rellenar() {
         inpMensaje.value = ""
         inpMensaje.value = "Hola, vi tu trabajo y me gustaría que estuviéramos en contacto. Saludos."
         alerta('Formulario', 'Ingrese un correo que pueda recibir y enviar correos.')
-    });
+    }, { passive: true });
 }
 
 //Función para obtener y enviar los datos del usuario.
