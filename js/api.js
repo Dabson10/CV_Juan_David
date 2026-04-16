@@ -1,6 +1,6 @@
 
 const url = "https://send-mail-java.onrender.com";
-
+// const url = "http://localhost:8080";
 export async function startServer() {
     const despertar = await fetch(`${url}/mail/wakeup`, {
         method: 'POST'

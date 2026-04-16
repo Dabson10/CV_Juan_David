@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         // Despertamos el servidor.
         startServer();
-        
+
         // Inicialización de Contenido (lo más importante primero)
         maquetar('java');
         cambiarTec();
-        
+
         // Inicialización del Tema
         const currentTheme = localStorage.getItem('theme');
         const contCambio = document.getElementById('cont-cambio');
@@ -213,13 +213,13 @@ function maquetar(data) {
     const dato = tecnologias[data];
     if (!dato) return;
 
-    const titulo = document.getElementById('titulo');
+    const titulov = document.getElementById('tituloP');
     const descripcion = document.getElementById('descripcion')
     const cali = document.getElementById('calificacion');
 
-    titulo.innerText = dato.nombre;
+    titulov.textContent = dato.nombre;
     descripcion.textContent = dato.descripcion;
-    cali.innerText = experiencia(dato.calificacion)
+    cali.textContent = experiencia(dato.calificacion)
 
     const contenedorPrincipal = document.getElementById('proyect-cont');
     contenedorPrincipal.innerHTML = '';
