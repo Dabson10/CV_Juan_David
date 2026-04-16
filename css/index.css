@@ -3,8 +3,8 @@
     --text-color: #000000;
     --card-bg: #f8f9fa;
     --border-color: #000000;
-    --accent-color: #000000;
-    --load-color: #830ef8;
+    --accent-color: #3F72AF;
+    --load-color: #3F72AF;
     --shadow-color: #000000;
     --btn-text: #ffffff;
 }
@@ -16,8 +16,13 @@ body.dark-theme {
     --text-color: #ffffff;
     --card-bg: #1a1a1a;
     --border-color: #ffffff;
-    --accent-color: #f7d51d;
-    --load-color: #f7d51d;
+    /* --accent-color: #A3C7D6;
+    --load-color: #f7d51d; */
+    --accent-color: #ED985F;
+    --load-color: #ED985F;
+
+    /* --accent-color: #f7d51d;
+    --load-color: #f7d51d; */
     --shadow-color: #2a2a2a;
     --btn-text: #000000;
 
@@ -96,7 +101,7 @@ body {
     flex-direction: column;
     gap: 2rem;
     margin-bottom: 1rem;
-    border-bottom: 3px solid var(--border-color);
+    border-bottom: 4px solid var(--border-color);
     padding-bottom: 3rem;
     clear: both;
 }
@@ -112,9 +117,13 @@ body {
     font-size: 2.5rem;
 }
 
+.v3 {
+    color: var(--accent-color);
+}
+
 .p-carrera {
-    background-color: var(--text-color);
-    color: var(--card-bg);
+    background-color: var(--accent-color);
+    color: var(--btn-text);
     font-weight: 500;
     margin: .3em 0 1em;
     padding: 5px 10px;
@@ -165,7 +174,23 @@ body {
     display: flex;
     flex-direction: row;
     font-weight: bold;
-    gap: 1em
+    gap: 1em;
+    color: var(--accent-color);
+}
+
+.interes span {
+    background-color: var(--card-bg);
+    padding: 0.2em 0.5em;
+    border: 2px solid var(--border-color);
+    font-size: .9rem;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 3px 3px 0 var(--accent-color);
+}
+
+.interes span:hover {
+    background-color: var(--accent-color);
+    color: var(--btn-text);
+    transform: translateY(-3px);
 }
 
 /* Diseño de las opciones y valores. */
@@ -196,7 +221,7 @@ body {
 
 .cont-nav {
     padding-bottom: 1em;
-    border-bottom: 3px solid var(--border-color);
+    border-bottom: 4px solid var(--border-color);
     margin-bottom: 1em;
 
 }
@@ -226,7 +251,8 @@ body {
 .btn-temas.activo {
     background: var(--text-color);
     color: var(--bg-color);
-    box-shadow: 0px 0px 0px;
+    border-color: var(--accent-color);
+    box-shadow: 4px 4px 0px var(--accent-color);
 }
 
 .cont-proyectos {
@@ -242,6 +268,12 @@ body {
     flex-direction: column;
     border: 3px solid var(--border-color);
     box-shadow: 8px 8px 0 var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 var(--accent-color);
 }
 
 
@@ -377,8 +409,9 @@ textarea {
 .cont-grupo input:focus,
 textarea:focus {
     transform: translate(-3px, -3px);
-    box-shadow: 5px 5px 0 var(--shadow-color);
-    border: none;
+    box-shadow: 5px 5px 0 var(--accent-color);
+    border: 3px solid var(--accent-color);
+    outline: none;
 }
 
 .btn-enviar {
