@@ -335,8 +335,14 @@ body {
     background-color: var(--card-bg);
 }
 
+.infoExtra {
+    font-size: .88rem;
+    text-align: center;
+    padding: .5em 0
+}
+
 .btn-mensaje {
-    margin-left: auto;
+    margin: auto;
     background-color: var(--bg-color);
     border: 3px solid var(--border-color);
     color: var(--text-color);
@@ -355,10 +361,11 @@ body {
 
 .cont-cabForm {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: .5em
 }
 
 .form-user {
@@ -572,5 +579,15 @@ footer {
 
     .cont-input {
         width: 50%;
+    }
+
+    .cont-cabForm {
+        flex-direction: row;
+    }
+
+    .btn-mensaje {
+        margin: 0;
+        margin-left: auto;
+        flex-direction: column;
     }
 }
