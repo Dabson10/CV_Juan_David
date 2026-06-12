@@ -61,6 +61,13 @@ const tecnologias = {
                 linkText: "VISITAR SITIO..."
             },
             {
+                titulo: "Pit Crew / Gestor de Órdenes de servicio  | SPRING BOOT (En proceso)",
+                descripcion: "API Rest desarrollada con Spring boot 4, Spring Data, etc. Para la gestion de mantenimiento y reparacion de vehiculos gestionando clientes, tecnicos, vehiulos y ordenes en tiempo real.",
+                video: "./image/pitcrew.png",
+                link: "https://pit-crew.netlify.app/",
+                linkText: "VISITAR SITIO..."
+            },
+            {
                 titulo: "Send Mail >|< Enviar correos.",
                 descripcion: "Proyecto con el que puedes enviar correos electronicos con dos versiones una usando el protocolo SMTP y otra Usando HTTP para enviar correos sin restriccion de servidores.",
                 video: "",
