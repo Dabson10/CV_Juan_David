@@ -51,7 +51,7 @@ const tecnologias = {
     "java": {
         nombre: "JAVA >|< BACKEND",
         descripcion: "Sólida base en Java SE, enfocado en el desarrollo de aplicaciones robustas con interfaces Swing y gestión de datos relacionales en MySQL.",
-        calificacion: 7,
+        calificacion: 70,
         proyecto: [
             {
                 titulo: "GESTIÓN DE TAREAS (TODO LIST) | SPRING BOOT",
@@ -100,7 +100,7 @@ const tecnologias = {
     "jpa": {
         nombre: "PERSISTENCIA >|< ORM",
         descripcion: "Especialización en el uso de JPA y Hibernate para la comunicación entre el código y la base de datos, garantizando seguridad y limpieza.",
-        calificacion: 5,
+        calificacion: 50,
         proyecto: [
             {
                 titulo: "TO-DO LIST | PERSISTENCIA ",
@@ -114,7 +114,7 @@ const tecnologias = {
     "web": {
         nombre: "WEB >|< FRONTEND",
         descripcion: "Creación de interfaces de usuario modernas, interactivas y totalmente adaptables a dispositivos móviles siguiendo estándares de UX/UI.",
-        calificacion: 6,
+        calificacion: 60,
         proyecto: [
             {
                 titulo: "To-Do List WEB",
@@ -130,13 +130,6 @@ const tecnologias = {
                 link: "https://clon-utc.netlify.app/",
                 linkText: "VISITAR SITIO"
             },
-            // {
-            //     titulo: "ORGANIZADOR DE EQUIPOS POKÉMON",
-            //     descripcion: "Aplicación interactiva que demuestra el manejo dinámico de estados y animaciones en el navegador.",
-            //     video: "./image/equipo-pokemon.png",
-            //     link: "https://equipo-pokemonbw.netlify.app/",
-            //     linkText: "VISITAR SITIO"
-            // },
             {
                 titulo: "PLATAFORMA RHEMA.LOGOS",
                 descripcion: "Sitio web enfocado en la distribución de contenido optimizado, diseñado bajo la filosofía 'Mobile First'.",
@@ -149,7 +142,7 @@ const tecnologias = {
     "csharp": {
         nombre: "C#",
         descripcion: "Desarrollo de herramientas de escritorio funcionales y enfocadas en la productividad del usuario final.",
-        calificacion: 4,
+        calificacion: 40,
         proyecto: [
             {
                 titulo: "GESTOR ADMINISTRATIVO",
@@ -163,7 +156,7 @@ const tecnologias = {
     "mysql": {
         nombre: "MYSQL >|< BASES DE DATOS",
         descripcion: "Diseño y normalización de bases de datos relacionales, garantizando la integridad y rapidez en el acceso a la información.",
-        calificacion: 6,
+        calificacion: 60,
         proyecto: [
             {
                 titulo: "DISEÑO DE ESQUEMA RELACIONAL",
@@ -177,7 +170,7 @@ const tecnologias = {
     "python": {
         nombre: "PYTHON >|< LÓGICA",
         descripcion: "Creación de scripts para automatización y resolución de problemas algorítmicos mediante código limpio y eficiente.",
-        calificacion: 4,
+        calificacion: 40,
         proyecto: [
             {
                 titulo: "COLECCIÓN DE PRÁCTICAS ALGORTÍMICAS",
@@ -191,7 +184,7 @@ const tecnologias = {
     "kotlin": {
         nombre: "KOTLIN >|< ANDROID",
         descripcion: "Desarrollo de aplicaciones móviles modernas, integrando nuevas tecnologías para soluciones inteligentes y portátiles.",
-        calificacion: 5,
+        calificacion: 50,
         proyecto: [
             {
                 titulo: "GESTOR DE COMANDAS MÓVIL",
@@ -247,7 +240,6 @@ function maquetar(data) {
                 </div>`;
         }
 
-        // Logic to only show media container if it exists
         tarjeta.innerHTML = `
             ${mediaHTML}
             <div class="cont-infoProyect">
@@ -263,14 +255,15 @@ function maquetar(data) {
 
 function experiencia(calificacion) {
     let rango = "";
+    let cali = calificacion / 10;
     for (let i = 0; i < 10; i++) {
-        if (i < calificacion) {
-            rango += "=";
+        if (i < cali) {
+            rango += "="
         } else {
             rango += "/";
         }
     }
-    return `[${rango}] ${calificacion} de 10`;
+    return `[${rango}] ${calificacion}% de 100%`;
 }
 
 //Función para agregar un mensaje automatico en el formulario
