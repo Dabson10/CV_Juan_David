@@ -25,8 +25,56 @@ document.addEventListener('DOMContentLoaded', () => {
         cambioTema();
         enviarCorreo();
         rellenar();
+        initModalCertificacion();
     }, 0);
 }, { passive: true });
+
+function initModalCertificacion() {
+    const btnsCert = document.querySelectorAll('.btn-cert');
+    const modal = document.getElementById('modal-certificacion');
+    const btnCerrar = document.getElementById('btn-cerrar-modal');
+    const imgModal = document.getElementById('img-modal-cert');
+    const titModal = document.getElementById('tit-modal-cert');
+
+    if (!modal) return;
+
+    btnsCert.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const certSrc = btn.dataset.cert || './image/certificado_spring_boot.png';
+            const certTitulo = btn.dataset.titulo || 'CERTIFICACIÓN';
+
+            if (imgModal) {
+                imgModal.src = certSrc;
+                imgModal.alt = certTitulo;
+            }
+            if (titModal) {
+                titModal.textContent = certTitulo;
+            }
+
+            modal.classList.remove('cerrar');
+        });
+    });
+
+    const cerrarModal = () => {
+        modal.classList.add('cerrar');
+    };
+
+    if (btnCerrar) {
+        btnCerrar.addEventListener('click', cerrarModal);
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            cerrarModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('cerrar')) {
+            cerrarModal();
+        }
+    });
+}
 
 function cambioTema() {
     const btnCambio = document.getElementById('btn-cambio');

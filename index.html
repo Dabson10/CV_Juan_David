@@ -23,6 +23,18 @@
             <p id="mensaje"></p>
         </div>
     </div>
+    <!-- Modal Certificación -->
+    <div class="modal-certificacion cerrar" id="modal-certificacion">
+        <div class="cont-modal-cert">
+            <div class="cab-modal-cert">
+                <p id="tit-modal-cert">CERTIFICACIÓN</p>
+                <button class="btn-cerrar-modal" id="btn-cerrar-modal" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="body-modal-cert">
+                <img id="img-modal-cert" src="" alt="Certificado">
+            </div>
+        </div>
+    </div>
     <div class="contGeneral">
 
         <div class="cambioTema">
@@ -60,13 +72,26 @@
                 </div>
             </section>
         </header>
-
+        <section class="cont-certificacion">
+            <div class="cont-nav">
+                <h3 class="tit-exp">CERTIFICACIONES</h3>
+                <p class="text-p">Certificaciones que respaldan mi formación especialización técnica.
+                    Seleccione una certificación para visualizar el documento.</p>
+                <br>
+                <nav class="cont-certificaciones">
+                    <button class="btn-cert" id="btn-cert-spring-1" data-cert="./image/certificado_spring_boot.png"
+                        data-titulo="Desarrollo de APIs en Java con Spring Boot">Desarrollo de APIs en Java con Spring
+                        Boot</button>
+                </nav>
+            </div>
+        </section>
         <main class="principal">
             <div class="cont-nav">
                 <h3 class="tit-exp">TECNOLOGÍAS Y PROYECTOS</h3>
                 <p class="text-p">Seleccione la tecnologia para ver los proyectos.
                 </p>
-                <p class="text-p">.</p>
+                <br>
+                <!--                <p class="text-p">.</p>-->
                 <nav class="cont-botones">
                     <button class="btn-temas activo" data-tecnologia="java">JAVA</button>
                     <button class="btn-temas" data-tecnologia="jpa">JPA &gt;|&lt; Hibernate</button>

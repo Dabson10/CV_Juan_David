@@ -233,6 +233,55 @@ body {
     gap: .5em;
 }
 
+.cont-certificaciones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 700px;
+}
+
+.btn-cert {
+    width: 100%;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.85rem 1.2rem;
+    border: 3px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.btn-cert::after {
+    content: "VER ↗";
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    background-color: var(--accent-color);
+    color: var(--btn-text);
+    border: 2px solid var(--border-color);
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+}
+
+.btn-cert:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 var(--accent-color);
+    background-color: var(--bg-color);
+}
+
+.btn-cert:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0 var(--accent-color);
+}
+
 .cont-botones button {
     font-size: 1rem;
     border: 3px solid var(--border-color);
@@ -248,14 +297,16 @@ body {
     color: var(--text-color);
 }
 
-.btn-temas.activo {
+.btn-temas.activo,
+.btn-cert.activo {
     background: var(--text-color);
     color: var(--bg-color);
     border-color: var(--accent-color);
     box-shadow: 4px 4px 0px var(--accent-color);
 }
 
-.cont-proyectos {
+.cont-proyectos,
+.cont-certificacion {
     display: flex;
     flex-direction: column;
     padding-bottom: 2em;
@@ -547,6 +598,121 @@ footer {
 .cerrar {
     opacity: 0;
     visibility: hidden;
+}
+
+/* MODAL CERTIFICACIÓN FLOATING OVERLAY */
+.modal-certificacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1.5rem;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-certificacion.cerrar {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.cont-modal-cert {
+    position: relative;
+    background-color: var(--bg-color);
+    border: 4px solid var(--border-color);
+    box-shadow: 10px 10px 0 var(--accent-color);
+    max-width: 850px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modalScaleIn 0.25s ease-out;
+}
+
+@keyframes modalScaleIn {
+    from {
+        transform: scale(0.92) translateY(15px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.cab-modal-cert {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--border-color);
+}
+
+.cab-modal-cert p {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    font-size: 0.95rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-cerrar-modal {
+    background: transparent;
+    border: 2px solid var(--bg-color);
+    color: var(--bg-color);
+    font-size: 1.4rem;
+    line-height: 1;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.btn-cerrar-modal:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.body-modal-cert {
+    padding: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    max-height: calc(90vh - 60px);
+    background-color: var(--card-bg);
+}
+
+.body-modal-cert img {
+    max-width: 100%;
+    max-height: 70vh;
+    height: auto;
+    object-fit: contain;
+    border: 3px solid var(--border-color);
+    box-shadow: 6px 6px 0 var(--shadow-color);
 }
 
 
